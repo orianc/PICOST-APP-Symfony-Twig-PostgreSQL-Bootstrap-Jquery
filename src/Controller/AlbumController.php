@@ -5,14 +5,12 @@ namespace App\Controller;
 use App\Entity\Album;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
+use App\Repository\PhotoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/")
- */
 class AlbumController extends AbstractController
 {
     /**
@@ -26,7 +24,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="album_new", methods={"GET","POST"})
+     * @Route("album/new", name="album_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +47,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="album_show", methods={"GET"})
+     * @Route("album/{id}", name="album_show", methods={"GET"})
      */
     public function show(Album $album): Response
     {
@@ -59,7 +57,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="album_edit", methods={"GET","POST"})
+     * @Route("album/{id}/edit", name="album_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Album $album): Response
     {
@@ -79,11 +77,11 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="album_delete", methods={"POST"})
+     * @Route("album/{id}", name="album_delete", methods={"POST"})
      */
     public function delete(Request $request, Album $album): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$album->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $album->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($album);
             $entityManager->flush();

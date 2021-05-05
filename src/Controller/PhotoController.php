@@ -10,13 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/photo")
- */
 class PhotoController extends AbstractController
 {
     /**
-     * @Route("/", name="photo_index", methods={"GET"})
+     * @Route("/photo", name="photo_index", methods={"GET"})
      */
     public function index(PhotoRepository $photoRepository): Response
     {
@@ -26,7 +23,7 @@ class PhotoController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="photo_new", methods={"GET","POST"})
+     * @Route("photo/new", name="photo_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +46,7 @@ class PhotoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="photo_show", methods={"GET"})
+     * @Route("photo/{id}", name="photo_show", methods={"GET"})
      */
     public function show(Photo $photo): Response
     {
@@ -59,7 +56,7 @@ class PhotoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="photo_edit", methods={"GET","POST"})
+     * @Route("photo/{id}/edit", name="photo_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Photo $photo): Response
     {
@@ -79,7 +76,7 @@ class PhotoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="photo_delete", methods={"POST"})
+     * @Route("photo/{id}", name="photo_delete", methods={"POST"})
      */
     public function delete(Request $request, Photo $photo): Response
     {
