@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Coolvetica";
+    src: url("public/font/coolvetica-condensed-rg.ttf");
+};
+
+.navbar-brand {
+
+    font-family: "Coolvetica";
+}

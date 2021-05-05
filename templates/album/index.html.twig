@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album index
+{% endblock %}
+
+{% block body %}
+	<h1>Album index</h1>
+
+	<div class="container">
+	<a href="{{ path('album_new') }}">Create new</a>
+		<div class="row">
+
+			{% for album in albums %}
+				<div class="col-3 my-3">
+                <div class="card">
+				<h3>{{ album.name }}</h3>
+				<p>{{ album.createAt ? album.createAt|date('Y-m-d H:i:s') : '' }}</p>
+				<p>{{ album.updateAt ? album.updateAt|date('Y-m-d H:i:s') : '' }}</p>
+				
+					<a href="{{ path('album_show', {'id': album.id}) }}">show</a>
+					<a href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
+				
+                </div>
+                </div>
+				{% else %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
