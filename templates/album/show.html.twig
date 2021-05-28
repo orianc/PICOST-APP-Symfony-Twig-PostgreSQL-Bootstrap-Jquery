@@ -1,41 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album
+{% block title %}Album index
 {% endblock %}
 
 {% block body %}
-	<div class="py-5">
-		<div class="container">
-			<h2>{{ album.name }}</h2>
+	<div class="container py-5">
+		<h2>Album index</h2>
+		<a class="badge badge-warning" href="{{ path('album_new') }}">Ajouter un album</a>
+		{% block albums %}
+			<div class="row flex-column flex-md-row">
 
-			<div class="row justify-content-between">
+				<nav class="col-3 nav flex-column bg-light">
+					{% for album in albums %}
+						{# <h3>{{ album.name }}</h3> #}
+						<div>
+							<a class="d-inline-flex nav-link" aria-current="page" href="{{ path('album_show', {'id': album.id}) }}">{{ album.name }}</a>
+							<a class="badge" href="{{ path('album_edit', {'id': album.id}) }}">
+								<i class="fas fa-edit"></i>
+							</a>
+						</div>
+					{% endfor %}
+				</nav>
+				<div class="col-9 bg-dark row justify-content-center">
+					{% for p in album.photos %}
+						<div class="col-6 col-md-3 col-lg-2 m-2" style="height : 200px ; width: 200px;">
+							<img class="w-75 rounded" src="{{ asset ('photos/' ~ p.name ~ '.jpeg' ) }}" alt="">
+							<p>{{p.name}}</p>
+						</div>
 
-				<div class="">
-					<p class="badge">Créé le
-						{{ album.createAt ? album.createAt|date('Y-m-d H:i:s') : '' }} 
-					Dernier ajout le
-						{{ album.updateAt ? album.updateAt|date('Y-m-d H:i:s') : '' }}</p>
-				</div>
-
-				<div class="">
-					<a class="btn btn-primary" href="{{ path('album_index') }}">Retour aux albums</a>
-					<a class="btn btn-secondary" href="{{ path('album_edit', {'id': album.id}) }}">Modifier</a>
-
+					{% endfor %}
 				</div>
 			</div>
-
-			<div class="row">
-				{% for p in album.photos %}
-					<div class="col-2 m-2" style="height : 200px ; width: 200px;">
-						<p>{{p.name}}</p>
-						<img class="w-75 rounded" src="{{ asset ('photos/' ~ p.name ~ '.jpeg' ) }}" alt="">
-					</div>
-				{% endfor %}
-			</div>
-
-
-		</div>
-
-
-		{{ include('album/_delete_form.html.twig') }}
-	{% endblock %}
+		{% endblock %}
+	</div>
+{% endblock %}

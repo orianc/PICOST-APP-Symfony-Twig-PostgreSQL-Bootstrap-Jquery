@@ -20,6 +20,7 @@ class AlbumController extends AbstractController
     {
         return $this->render('album/index.html.twig', [
             'albums' => $albumRepository->findAll(),
+
         ]);
     }
 
@@ -49,10 +50,11 @@ class AlbumController extends AbstractController
     /**
      * @Route("album/{id}", name="album_show", methods={"GET"})
      */
-    public function show(Album $album): Response
+    public function show(Album $album, AlbumRepository $albumRepository): Response
     {
         return $this->render('album/show.html.twig', [
             'album' => $album,
+            'albums' => $albumRepository->findAll(),
         ]);
     }
 

@@ -4,27 +4,34 @@
 {% endblock %}
 
 {% block body %}
-<div class="py-5">
-	<div class="container">
+	<div class="container py-5">
 		<h2>Album index</h2>
-		<a href="{{ path('album_new') }}">Create new</a>
-		<div class="row">
+		<a class="badge badge-warning" href="{{ path('album_new') }}">Ajouter un album</a>
+		{% block albums %}
+			<div class="row">
+				<div class="col-10">
+					<nav class="col-4 nav flex-column bg-light">
+						{% for album in albums %}
+							{# <h3>{{ album.name }}</h3> #}
+							<a class="nav-link" aria-current="page" href="{{ path('album_show', {'id': album.id}) }}">{{ album.name }}</a>
+							{# 
+							<a class="badge" href="{{ path('album_show', {'id': album.id}) }}">Voir</a>
+							<a class="badge" href="{{ path('album_edit', {'id': album.id}) }}">Modifier</a>
+							#}
 
-			{% for album in albums %}
-				<div class="col-3 my-3">
-					<div class="card">
-						<h3>{{ album.name }}</h3>
-						<p>{{ album.createAt ? album.createAt|date('Y-m-d H:i:s') : '' }}</p>
-						<p>{{ album.updateAt ? album.updateAt|date('Y-m-d H:i:s') : '' }}</p>
-
-						<a href="{{ path('album_show', {'id': album.id}) }}">show</a>
-						<a href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
-
-					</div>
+						{% endfor %}
+					</nav>
+					{# <div class="col-8 bg-dark">
+						{% for photo in albums.photos %}
+						<div class="col-2 m-2" style="height : 200px ; width: 200px;">
+						<p>{{p.name}}</p>
+						<img class="w-75 rounded" src="{{ asset ('photos/' ~ p.name ~ '.jpeg' ) }}" alt="">
+						</div>
+						
+						{% endfor %}
+					</div> #}
 				</div>
-				{% else %}
-			{% endfor %}
-		</div>
+			</div>
+		{% endblock %}
 	</div>
-</div>
 {% endblock %}
