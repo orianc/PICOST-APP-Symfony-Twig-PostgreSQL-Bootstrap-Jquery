@@ -1,20 +1,81 @@
+body{
+    font-family: 'Lato', sans-serif;
+    
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Racing Sans One', cursive;
+
+}
 
 :root {
     --bg-yellow: #FFDE00;
 }
 
+
+a, a:hover {
+    text-decoration: none;
+    color:unset;
+    
+}
+
+
+
 .line {
     display: inline-block;
-    width: 2px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    right: -20px;
+    top: 10px;
+    z-index: -1;
     position: relative;
-    bottom: -15px;
     background: var(--bg-yellow);
-    margin-right: 10px ;
-    margin-left: 10px ;
+    margin-right: 10px;
+    margin-left: 10px;
+
 }
 
 .brand {
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: 'Racing Sans One', cursive;
     font-size: 24px;
+    transition: 1s;
+    
+}
+
+.nav-item-link{
+    font-size: 12px;
+    transition: 600ms;
+}
+.nav-item-link:hover{
+    background-color: #3d3d3d44;
+    transform: scale(1.2,1.2);
+}
+
+.fa-edit:hover{
+    color: #FFDE00;
+
+}
+
+.fa-folder-plus{
+transition: 500ms;
+}
+
+
+.fa-folder-plus:hover{
+    color: #FFDE00;
+    transform: translateY(-10px);
+
+}
+
+.badge-warning{
+    background-color: #FFDE00;
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav-albums {
+        
+        
+        max-width: fit-content;
+    }
 }

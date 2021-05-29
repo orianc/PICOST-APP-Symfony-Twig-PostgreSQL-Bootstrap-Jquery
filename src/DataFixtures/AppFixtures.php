@@ -32,11 +32,18 @@ class AppFixtures extends Fixture
             $photoPortrait = new Photo;
             $photoPortrait
                 ->setName('pexels-photo-' . $i)
-                ->setIntoAlbum($albumArrayObj[0])
-                // ->setIntoAlbum($albumArrayObj[1])
-                // ->setIntoAlbum($albumArrayObj[2])
-                ;
+                ->setIntoAlbum($albumArrayObj[0]);
             $manager->persist($photoPortrait);
+            $photoPortrait2 = new Photo;
+            $photoPortrait2
+                ->setName('pexels-photo-' . $i)
+                ->setIntoAlbum($albumArrayObj[1]);
+            $manager->persist($photoPortrait2);
+            $photoPortrait3 = new Photo;
+            $photoPortrait3
+                ->setName('pexels-photo-' . $i)
+                ->setIntoAlbum($albumArrayObj[2]);
+            $manager->persist($photoPortrait3);
         }
 
 

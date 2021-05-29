@@ -1,27 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white">
 
 	<a class="navbar-brand d-flex align-items-end" href="#">
-		<span>
-			<i class="fas fa-images d-inline-block align-top mx-2" width="30" height="30"></i>
-		</span>
-		<span class="line mx-4"></span>
-		<span class="brand">
-			Pic My Stack
-		</span>
+		<a class="brand" href="{{ path('album_index') }}">
+			<span class="line rounded-circle mx-2"></span>
+			<span class="brand-anim ">Piscost</span>
+		</a>
 	</a>
 
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	<button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-link active" href="#">A propos</a>
-			<a class="nav-link" href=" {{ path ('album_index')}} ">Mes travaux</a>
-			<a class="nav-link" href="#">Prestations</a>
-			<a class="nav-link" href="#">Contact</a>
-
-			<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
+			<a class="nav-link active" href=" {{ path ('album_index')}} ">Picbook</a>
+			<a class="nav-link" href="#">About Picost</a>
+			<a class="nav-link" href="#" aria-disabled="true">Login</a>
 		</div>
 	</div>
 </nav>
