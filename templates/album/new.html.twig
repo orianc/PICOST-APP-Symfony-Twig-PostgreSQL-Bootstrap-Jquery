@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Album{% endblock %}
+{% block title %}New Picbook !
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Album</h1>
+	<div class="container mt-5">
+		<div class="row flex-column">
+			<h1>New PicBook</h1>
+			<p>Create your new PicBook from here, chose a name and upload your picture bellow !</p>
+			<div class="col-6 d-flex align-items-end justify-content-between">
 
-    {{ include('album/_form.html.twig') }}
-
-    <a href="{{ path('album_index') }}">back to list</a>
+				<div>
+					<a class="btn btn-warning" href="{{ path('album_index') }}">
+						<i class="fas fa-arrow-circle-left"></i>
+					</a>
+				</div>
+				{{ include('album/_form.html.twig') }}
+			</div>
+		</div>
+	</div>
 {% endblock %}

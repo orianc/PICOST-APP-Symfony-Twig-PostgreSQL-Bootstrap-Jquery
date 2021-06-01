@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album index
+{% block title %}Picbook -
+	{{album.name}}
 {% endblock %}
 
 {% block body %}
 	<div class="container py-5">
-		<h2>Album index</h2>
 		{% block albums %}
+				<h2 class="text-center">{{album.name}}</h2>
 			<div class="row justify-content-center align-items-center align-items-md-start flex-column flex-md-row">
-					{% include "album/_navalbums.html.twig" %}
+				{% include "album/_navalbums.html.twig" %}
 
 				<div class="col-10 bg-dark row justify-content-center py-3">
 					{% for p in album.photos %}
-											{% include "album/_gallerypattern.html.twig" %}
+						{% include "album/_gallerypattern.html.twig" %}
 
 
 					{% endfor %}

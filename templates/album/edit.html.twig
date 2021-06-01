@@ -1,13 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Album{% endblock %}
+{% block title %}Edit Album
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Album</h1>
+	<div class="container mt-5">
+		<div class="row">
+			<h1>Edit Your PicBook</h1>
+			<p>Edit your PicBook from here, you can rename or delete the entiere Pic Book.</p>
+			<div class="col-6 d-flex justify-content-between align-items-end">
+				<div>
+					<a class="btn btn-warning" href="{{ path('album_index') }}">
+						<i class="fas fa-arrow-circle-left"></i>
+					</a>
+				</div>
+				{{ include('album/_form.html.twig', {'button_label': 'Update'}) }}
+				{{ include('album/_delete_form.html.twig') }}
+			</div>
+		</div>
+	</div>
 
-    {{ include('album/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('album_index') }}">back to list</a>
-
-    {{ include('album/_delete_form.html.twig') }}
 {% endblock %}

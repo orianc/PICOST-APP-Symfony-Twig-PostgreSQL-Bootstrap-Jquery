@@ -5,15 +5,15 @@
 		<i style="width: 20px;" class="fas fa-ellipsis-h "></i>
 	</button>
 
-	<div id="navbarAlbum" class="collapse navbar-collapse col-2 nav nav-albums flex-md-column">
+	<div id="navbarAlbum" class="collapse navbar-collapse col-3 nav nav-albums flex-md-column">
 		<a class="badge rounded-pill mb-2" href="{{ path('album_new') }}">
 			<i class="fas fa-folder-plus fa-2x"></i>
 		</a>
 		<div class="bg-light">
 			{% for album in albums %}
-				<div class="nav-item-link d-flex p-1 px-2">
-					<a class="badge " href="{{ path('album_edit', {'id': album.id}) }}">
-						<i class="fas fa-edit fa-1x"></i>
+				<div class="nav-item-link d-flex p-1">
+					<a class="fs-1" href="{{ path('album_edit', {'id': album.id}) }}">
+						<i class="btn-warning rounded p-1 mx-2 fas fa-edit fa-1x"></i>
 					</a>
 					<a class="" href="{{ path('album_show', {'id': album.id}) }}">{{ album.name }}</a>
 				</div>

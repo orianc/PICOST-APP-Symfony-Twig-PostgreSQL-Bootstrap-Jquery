@@ -1,81 +1,81 @@
-body{
-    font-family: 'Lato', sans-serif;
-    
+body {
+	font-family: 'Lato', sans-serif;
 }
 
-h1,h2,h3,h4 {
-    font-family: 'Racing Sans One', cursive;
-
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Racing Sans One', cursive;
 }
 
 :root {
-    --bg-yellow: #FFDE00;
+	--bg-yellow: #ffde00;
 }
 
-
-a, a:hover {
-    text-decoration: none;
-    color:unset;
-    
+a,
+a:hover {
+	text-decoration: none;
+	color: unset;
 }
-
-
 
 .line {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    right: -20px;
-    top: 10px;
-    z-index: -1;
-    position: relative;
-    background: var(--bg-yellow);
-    margin-right: 10px;
-    margin-left: 10px;
-
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	right: -20px;
+	top: 10px;
+	z-index: -1;
+	position: relative;
+	background: var(--bg-yellow);
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .brand {
-    font-family: 'Racing Sans One', cursive;
-    font-size: 24px;
-    transition: 1s;
-    
+	font-family: 'Racing Sans One', cursive;
+	font-size: 24px;
+	transition: 1s;
 }
 
-.nav-item-link{
-    font-size: 12px;
-    transition: 600ms;
+.nav-item-link {
+	font-size: 12px;
+	transition: 600ms;
 }
-.nav-item-link:hover{
-    background-color: #3d3d3d44;
-    transform: scale(1.2,1.2);
-}
-
-.fa-edit:hover{
-    color: #FFDE00;
-
+.nav-item-link:hover {
+	background-color: #3d3d3d44;
+	transform: scale(1.2, 1.2);
 }
 
-.fa-folder-plus{
-transition: 500ms;
+.fa-edit:hover {
+	color: #ffde00;
 }
 
-
-.fa-folder-plus:hover{
-    color: #FFDE00;
-    transform: translateY(-10px);
-
+.fa-folder-plus {
+	transition: 500ms;
 }
 
-.badge-warning{
-    background-color: #FFDE00;
+.fa-folder-plus:hover {
+	color: #ffde00;
+	transform: translateY(-10px);
 }
 
+.btn-warning,
+.badge-warning {
+	background-color: #ffde00;
+	border-color: #ffde00;
+	color: white;
+}
+
+.btn-warning:hover,
+.badge-warning:hover {
+	border-color: #cfb50b9c;
+	background-color: #cfb50b9c;
+	color: white;
+}
 
 @media screen and (max-width: 768px) {
-    .nav-albums {
-        
-        
-        max-width: fit-content;
-    }
+	.nav-albums {
+		max-width: fit-content;
+	}
 }

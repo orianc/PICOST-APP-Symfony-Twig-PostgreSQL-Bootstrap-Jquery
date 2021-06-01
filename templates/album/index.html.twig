@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album index
+{% block title %}Picbook
 {% endblock %}
 
 {% block body %}
@@ -9,15 +9,15 @@
 
 		{% block albums %}
 			<div class="row  justify-content-center align-items-center align-items-md-start flex-column flex-md-row">
-					{% include "album/_navalbums.html.twig" %}
+				{% include "album/_navalbums.html.twig" %}
 
-					<div class="col-10 rounded bg-dark row justify-content-center py-3 ">
-						{% for p in albums[0].photos %}
+				<div class="col-9 rounded bg-dark row justify-content-center py-3 ">
+					{% for p in albums[0].photos %}
 						{% include "album/_gallerypattern.html.twig" %}
 
-						{% endfor %}
-					</div>
-				
+					{% endfor %}
+				</div>
+
 			</div>
 		{% endblock %}
 	</div>
