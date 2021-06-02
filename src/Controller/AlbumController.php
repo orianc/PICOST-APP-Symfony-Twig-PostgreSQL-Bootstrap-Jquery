@@ -61,7 +61,7 @@ class AlbumController extends AbstractController
     /**
      * @Route("album/{id}/edit", name="album_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Album $album): Response
+    public function edit(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
@@ -75,6 +75,8 @@ class AlbumController extends AbstractController
         return $this->render('album/edit.html.twig', [
             'album' => $album,
             'form' => $form->createView(),
+            'albums' => $albumRepository->findAll(),
+
         ]);
     }
 

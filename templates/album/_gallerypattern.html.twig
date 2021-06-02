@@ -1,4 +1,5 @@
 <div class="col-6 col-md-4 col-lg-3 my-2">
-	<img style=" width: 300px;" class="w-100 rounded" src="{{ asset ('photos/' ~ p.name ~ '.jpeg' ) }}" alt="">
-	<blockquote class="blockquote-footer">{{p.name}}</blockquote>
+	<a class="fs-1" href="{{ path('photo_show', {'id': p.id}) }}">
+		<img style=" width: 300px;" class="w-100 rounded" src="{{ asset ('photos/pictures/' ~ p.name ) }}" alt="">
+	</a>
 </div>

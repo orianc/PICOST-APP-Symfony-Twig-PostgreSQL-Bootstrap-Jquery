@@ -16,13 +16,7 @@ class AlbumType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name')
-      ->add('photos', CollectionType::class, [
-        'entry_type' => PhotoType::class,
-        'allow_add' => true,
-        'allow_delete' => true,
-        'prototype' => true
-      ]);
+      ->add('name');
   }
 
   public function configureOptions(OptionsResolver $resolver)

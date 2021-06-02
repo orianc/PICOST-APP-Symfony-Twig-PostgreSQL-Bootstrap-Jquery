@@ -22,10 +22,15 @@ class PhotoType extends AbstractType
                 'choice_label' => 'Name'
             ])
             ->add('pictureFile', VichImageType::class, [
-                'label' => 'Upload',
+                'label' => 'Upload an other Pic',
                 'required' => false,
                 'download_uri' => true,
-                'image_uri' => true
+                'image_uri' => true,
+                'required' => false,
+                'allow_delete' => false,
+                'delete_label' => '...',
+                'download_label' => 'Download this Pic',
+
 
             ])
             ->add(
@@ -33,7 +38,7 @@ class PhotoType extends AbstractType
                 TextType::class,
                 [
                     'label' => 'Name',
-                    'empty_data' => '',
+                    'empty_data' => ' Default value ',
 
                 ]
             );
@@ -43,6 +48,7 @@ class PhotoType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Photo::class,
+            'empty_data' => ' Default value '
         ]);
     }
 }

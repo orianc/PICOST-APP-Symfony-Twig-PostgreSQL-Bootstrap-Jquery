@@ -80,7 +80,7 @@ class PhotoController extends AbstractController
      */
     public function delete(Request $request, Photo $photo): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$photo->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $photo->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($photo);
             $entityManager->flush();
