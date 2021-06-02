@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\PhotoRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PhotoRepository;
+
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PhotoRepository::class)
+ * @Vich\Uploadable
  */
 class Photo
 {
@@ -26,6 +30,14 @@ class Photo
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="photos")
      */
     private $intoAlbum;
+
+    /**
+     * @Vich\UploadableField(mapping="pictures", fileNameProperty="name")
+     * 
+     * @var File|null
+     * 
+     */
+    private $pictureFile;
 
     public function getId(): ?int
     {
@@ -54,5 +66,19 @@ class Photo
         $this->intoAlbum = $intoAlbum;
 
         return $this;
+    }
+
+    public function getPictureFile(): ?File
+    {
+        return $this->pictureFile;
+    }
+
+    public function setPictureFile(?File $pictureFile = null): self
+    {
+        $this->pictureFile = $pictureFile;
+        return $this;
+        if (null !== $pictureFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 }

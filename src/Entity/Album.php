@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AlbumRepository;
+use DateTimeZone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -24,15 +25,7 @@ class Album
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createAt;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updateAt;
 
     /**
      * @ORM\OneToMany(targetEntity=Photo::class, mappedBy="intoAlbum")
@@ -61,29 +54,6 @@ class Album
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeInterface
-    {
-        return $this->createAt;
-    }
-
-    public function setCreateAt(\DateTimeInterface $createAt): self
-    {
-        $this->createAt = $createAt;
-
-        return $this;
-    }
-
-    public function getUpdateAt(): ?\DateTimeInterface
-    {
-        return $this->updateAt;
-    }
-
-    public function setUpdateAt(\DateTimeInterface $updateAt): self
-    {
-        $this->updateAt = $updateAt;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Photo[]

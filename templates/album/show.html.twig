@@ -7,7 +7,9 @@
 {% block body %}
 	<div class="container py-5">
 		{% block albums %}
-				<h2 class="text-center">{{album.name}}</h2>
+			<a class="btn btn-dark" href="{{ path('photo_new', {'id': album.id}) }}">Add Pic</a>
+
+			<h2 class="text-center">{{album.name}}</h2>
 			<div class="row justify-content-center align-items-center align-items-md-start flex-column flex-md-row">
 				{% include "album/_navalbums.html.twig" %}
 
