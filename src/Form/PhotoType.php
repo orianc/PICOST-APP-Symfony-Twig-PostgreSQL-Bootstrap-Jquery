@@ -16,6 +16,7 @@ class PhotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('intoAlbum', EntityType::class, [
                 'label' => 'Picbook',
                 'class' => Album::class,
@@ -30,18 +31,11 @@ class PhotoType extends AbstractType
                 'allow_delete' => false,
                 'delete_label' => '...',
                 'download_label' => 'Download this Pic',
-
-
             ])
-            ->add(
-                'name',
-                TextType::class,
-                [
-                    'label' => 'Name',
-                    'empty_data' => ' Default value ',
-
-                ]
-            );
+            ->add('name', TextType::class, [
+                'label' => 'Name',
+                'empty_data' => ' Default value ',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

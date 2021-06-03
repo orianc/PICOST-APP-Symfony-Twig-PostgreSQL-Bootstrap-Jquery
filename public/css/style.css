@@ -5,8 +5,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
-	font-family: 'Racing Sans One', cursive;
+h4,
+.btn {
+	font-family: 'Racing Sans One', cursive !important;
 }
 
 :root {

@@ -18,6 +18,7 @@
 						<th>Picbook</th>
 						<th>Pic</th>
 						<th>Name</th>
+						{# This last <th> for action btn #}
 						<th></th>
 					</tr>
 				</thead>
@@ -29,17 +30,19 @@
 							<td><img style=" width: 100px;" src="{{ asset ('photos/pictures/' ~ photo.name )}}" alt="" srcset=""></td>
 							<td>{{ photo.name }}</td>
 							<td>
-								<a href="{{ path('photo_show', {'id': photo.id}) }}">Voir</a>
-								<button class="btn btn-warning" href="{{ path('photo_edit', {'id': photo.id}) }}">
-									<i class="fas fa-edit"></i>
-								</button>
+								<a class="p-1 m-2 btn btn-outline-success" href="{{ path('photo_show', {'id': photo.id}) }}">
+									Look
+								</a>
+								<a class="p-1 m-2 btn btn-outline-warning" href="{{ path('photo_edit', {'id': photo.id}) }}">
+									Edit
+								</a>
 								{{ include('photo/_delete_form.html.twig') }}
 
 							</td>
 						</tr>
 					{% else %}
 						<tr>
-							<td colspan="3">no records found</td>
+							<td colspan="3">Oups no one Pic ?</td>
 						</tr>
 					{% endfor %}
 				</tbody>

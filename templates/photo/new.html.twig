@@ -4,9 +4,15 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Add Pic</h1>
+	<div class="container mt-5">
+		<div class="row align-items-center flex-column">
+			<h1>Add Pic</h1>
 
-	{{ include('photo/_formnew.html.twig') }}
 
-	<a href="{{ path('album_index') }}">back to list</a>
+			{{ include('photo/_formnew.html.twig') }}
+		</div>
+
+	</div>
+
+
 {% endblock %}
