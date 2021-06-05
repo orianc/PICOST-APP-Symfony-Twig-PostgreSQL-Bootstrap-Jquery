@@ -1,4 +1,4 @@
-- [1. Pic My Stack](#1-pic-my-stack)
+- [1. Picost](#1-picost)
   - [1.1. Le besoin](#11-le-besoin)
     - [1.1.1. Bonus : Création de compte](#111-bonus--création-de-compte)
 - [2. Analyse & Conception](#2-analyse--conception)
@@ -13,26 +13,26 @@
     - [2.6.3. Versionning](#263-versionning)
     - [2.6.4. Déploiement](#264-déploiement)
 
+# 1. Picost
 
-# 1. Pic My Stack
-
-    Pic My Stack - How to pick yours stack's pictures and photos. ®
+    Picost - How to pick yours stack's pictures and photos. ®
 
 Projet de developpement web qui vise à permettre à l'utilisateur d'organiser comme il le souhaite ses photos sous forme d'album.
 
 ## 1.1. Le besoin
 
-Un photographe professionnel demande à ce qu'on lui créé une application web pour stocker, organiser et montrer ses photos ainsi que proposer ses pretations au grand public. 
+Un photographe professionnel demande à ce qu'on lui créé une application web pour stocker, organiser et montrer ses photos ainsi que proposer ses pretations au grand public.
 
 Il souhaite par le biais de cet outil, pouvoir démarcher, vendre, rendre la prestation demander au futur client.
 
-Il souhaite utiliser cette application sur différent support *(ordinateur, tablette, smartphone)* selon le contact qu'il aura avec son client. 
+Il souhaite utiliser cette application sur différent support _(ordinateur, tablette, smartphone)_ selon le contact qu'il aura avec son client.
 
 Il doit pouvoir montrer et proposer **ses prestations** et **ses travaux** au grand public lui permettant ainsi avec **un outil flexible et dynamique mais aussi esthétique et pro**, de démarcher ses clients avec **une présentation de ses travaux et de ses tarifs qu'il pourra mettre à jour régulièrement et selon son besoin.**
 
-Pour montrer ses travaux il a l'habitude de créer des **albums** par **thème** dans lesquel il regroupe les **photos répondant à ce thème**. Cela lui permet aurpès d'un client de montrer ses compétences selon tel ou tel besoin *(ex : des portraits, des paysages, des évènements etc...)*.
+Pour montrer ses travaux il a l'habitude de créer des **albums** par **thème** dans lesquel il regroupe les **photos répondant à ce thème**. Cela lui permet aurpès d'un client de montrer ses compétences selon tel ou tel besoin _(ex : des portraits, des paysages, des évènements etc...)_.
 
 ### 1.1.1. Bonus : Création de compte
+
 https://symfony.com/doc/current/doctrine/registration_form.html
 
     Pour **rendre une prestation de photogrpahie à un client**, il propose **un album dédié** qui regroupe les photos qui lui sont dédiées.
@@ -65,7 +65,7 @@ Quels seront les utilisateurs de l'API ?
 - Le photographe as admin
 - Le public / prospect as visitor
 - Le client as consumer
-  
+
 ## 2.3. Use case
 
 ![UseCase](z.conception/UseCase.jpg)
@@ -77,10 +77,13 @@ Quels seront les utilisateurs de l'API ?
 ## 2.5. Maquette graphique
 
 ## 2.6. Technologie
+
 ### 2.6.1. Back-end
+
 ### 2.6.2. Front-end
-### 2.6.3. Versionning 
+
+### 2.6.3. Versionning
+
 ### 2.6.4. Déploiement
 
     ## 2.7. Support de présentation client
-
