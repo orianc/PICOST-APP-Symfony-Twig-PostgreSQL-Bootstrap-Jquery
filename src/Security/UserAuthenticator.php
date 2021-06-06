@@ -63,7 +63,6 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        dd(new InvalidCsrfTokenException());
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
         if (!$this->csrfTokenManager->isTokenValid($token)) {
             throw new InvalidCsrfTokenException();
@@ -79,7 +78,9 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+        dump($credentials, $user);
+        // return
+        dd($this->passwordEncoder->isPasswordValid($user, $credentials['password']));
     }
 
     /**
