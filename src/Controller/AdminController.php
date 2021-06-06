@@ -13,21 +13,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
- * @Route("/admin", name="admin_")
+ * @Route("/admin")
  */
 class AdminController extends AbstractController
 {
+    // /**
+    //  * @Route("/", name="admin_index")
+    //  */
+    // public function index(): Response
+    // {
+    //     return $this->render('admin/users.html.twig', [
+    //         'controller_name' => 'AdminController',
+    //     ]);
+    // }
     /**
-     * @Route("/", name="admin_index")
-     */
-    public function index(): Response
-    {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
-    }
-    /**
-     * @Route("/users", name="admin_users")
+     * @Route("/", name="admin_users")
      */
     public function usersList(UserRepository $userRepository): Response
     {

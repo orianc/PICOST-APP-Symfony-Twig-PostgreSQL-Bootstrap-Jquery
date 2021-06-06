@@ -78,11 +78,9 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        dump($credentials, $user);
-        // return
-        dd($this->passwordEncoder->isPasswordValid($user, $credentials['password']));
-    }
 
+        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+    }
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
      */
@@ -97,8 +95,8 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
             return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('album_index'));
+        throw new \Exception('admin_index');
     }
 
     protected function getLoginUrl()

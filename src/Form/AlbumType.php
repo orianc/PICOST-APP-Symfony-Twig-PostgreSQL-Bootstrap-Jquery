@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Album;
+use App\Entity\User;
 use App\Form\PhotoType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,7 +17,11 @@ class AlbumType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name');
+      ->add('name')
+      ->add('userLink', EntityType::class, [
+        'class' => User::class,
+        'choice_label' => 'login',
+      ]);
   }
 
   public function configureOptions(OptionsResolver $resolver)
