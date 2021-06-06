@@ -10,6 +10,27 @@ h4,
 	font-family: 'Racing Sans One', cursive !important;
 }
 
+.custom-file-input {
+	opacity: 1;
+}
+.custom-file-label {
+	opacity: 0;
+}
+
+.input {
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	padding: 2px;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
 :root {
 	--bg-yellow: #ffde00;
 }
