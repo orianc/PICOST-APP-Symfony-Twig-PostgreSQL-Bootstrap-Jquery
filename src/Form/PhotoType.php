@@ -17,15 +17,13 @@ class PhotoType extends AbstractType
     {
         $builder
 
-            ->add('intoAlbum', EntityType::class, [
-                'label' => 'Picbook',
-                'class' => Album::class,
-                'choice_label' => 'Name'
-            ])
             ->add('pictureFile', VichImageType::class, [
-                'label' => 'Upload an other Pic',
+                'label' => 'Upload',
+                'attr' => [
+                    'class' => 'input red'
+                ],
                 'required' => false,
-                'download_uri' => true,
+                'download_uri' => false,
                 'image_uri' => true,
                 'required' => false,
                 'allow_delete' => false,
@@ -35,6 +33,11 @@ class PhotoType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Name',
                 'empty_data' => ' Default value ',
+            ])
+            ->add('intoAlbum', EntityType::class, [
+                'label' => 'Picbook',
+                'class' => Album::class,
+                'choice_label' => 'Name'
             ]);
     }
 

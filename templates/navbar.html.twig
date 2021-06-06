@@ -16,7 +16,13 @@
 			<a class="nav-link active" href=" {{ path ('album_index')}} ">Picbook</a>
 			<a class="nav-link" href=" {{ path ('photo_index')}} ">All Pic</a>
 			<a class="nav-link" href="{{ path ('about_picost')}}">About Picost</a>
-			<a class="nav-link" href="#" aria-disabled="true">Login</a>
+			{% if is_granted('ROLE_ADMIN') %}
+				<a class="nav-link" href="{{ path ('app_logout')}}">Logout</a>
+
+			{% else %}
+				<a class="nav-link" href="{{ path ('app_login')}}">Login</a>
+			{% endif %}
+
 		</div>
 	</div>
 </nav>

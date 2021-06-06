@@ -32,6 +32,11 @@ class Album
      */
     private $photos;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="album")
+     */
+    private $userLink;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
@@ -81,6 +86,18 @@ class Album
                 $photo->setIntoAlbum(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUserLink(): ?User
+    {
+        return $this->userLink;
+    }
+
+    public function setUserLink(?User $userLink): self
+    {
+        $this->userLink = $userLink;
 
         return $this;
     }

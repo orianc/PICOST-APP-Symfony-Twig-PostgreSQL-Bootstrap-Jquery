@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Album;
 use App\Entity\Photo;
 use App\Form\PhotoType;
 use App\Repository\PhotoRepository;
@@ -23,9 +24,9 @@ class PhotoController extends AbstractController
     }
 
     /**
-     * @Route("photo/new", name="photo_new", methods={"GET","POST"})
+     * @Route("album/{id}/photo/new", name="photo_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Album $album): Response
     {
         $photo = new Photo();
         $form = $this->createForm(PhotoType::class, $photo);
@@ -36,7 +37,9 @@ class PhotoController extends AbstractController
             $entityManager->persist($photo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('photo_index');
+            return $this->redirectToRoute('album_show', [
+                'id' => $album->getId()
+            ]);
         }
 
         return $this->render('photo/new.html.twig', [

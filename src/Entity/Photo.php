@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PhotoRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -23,6 +24,7 @@ class Photo
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
      */
     private $name;
 
@@ -33,7 +35,7 @@ class Photo
 
     /**
      * @Vich\UploadableField(mapping="pictures", fileNameProperty="name")
-     * 
+     * @Assert\NotBlank(message="Selectionner un fichier")
      * @var File|null
      * 
      */
