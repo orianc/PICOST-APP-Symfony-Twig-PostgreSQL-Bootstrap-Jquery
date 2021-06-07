@@ -8,7 +8,9 @@
 		<div class="row justify-content-center">
 			<div>
 				<h1>All Pic
-					<a class="btn btn-light" href="{{ path('photo_new') }}">Add Pic</a>
+					{# 
+																														Ne fonctionne plus maintenant que l'ajout de photo a besoin de l'id album avant
+																														<a class="btn btn-light" href="{{ path('photo_new') }}">Add Pic</a> #}
 				</h1>
 			</div>
 
@@ -30,13 +32,17 @@
 							<td><img style=" width: 100px;" src="{{ asset ('photos/pictures/' ~ photo.name )}}" alt="" srcset=""></td>
 							<td>{{ photo.name }}</td>
 							<td>
-								<a class="p-1 m-2 btn btn-outline-success" href="{{ path('photo_show', {'id': photo.id}) }}">
-									Look
-								</a>
-								<a class="p-1 m-2 btn btn-outline-warning" href="{{ path('photo_edit', {'id': photo.id}) }}">
-									Edit
-								</a>
-								{{ include('photo/_delete_form.html.twig') }}
+								{% if is_granted('ROLE_CONSUMER') %}
+									<a class="p-1 m-2 btn btn-outline-success" href="{{ path('photo_show', {'id': photo.id}) }}">
+										Look
+									</a>
+								{% elseif is_granted('ROLE_ADMIN') %}
+
+									<a class="p-1 m-2 btn btn-outline-warning" href="{{ path('photo_edit', {'id': photo.id}) }}">
+										Edit
+									</a>
+									{{ include('photo/_delete_form.html.twig') }}
+								{% endif %}
 
 							</td>
 						</tr>

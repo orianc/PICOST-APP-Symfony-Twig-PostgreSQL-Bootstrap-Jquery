@@ -11,11 +11,16 @@
 
 			<img class="rounded" style=" width: 300px;" src="{{ asset ('photos/pictures/' ~ photo.name ) }}">
 
-		</div>
-		<a href="{{ path('photo_index') }}">back to list</a>
+			<div class="row mt-2">
+				{% if is_granted('ROLE_CONSUMER') %}
+					<a class="p-1 mx-2 btn btn-outline-success" href="{{ path('photo_index') }}">back to list</a>
+				{% elseif is_granted('ROLE_ADMIN') %}
+					<a class="p-1 mx-2 btn btn-outline-warning" href="{{ path('photo_edit', {'id': photo.id}) }}">edit</a>
+					{{ include('photo/_delete_form.html.twig') }}
+				{% endif %}
 
-		<a href="{{ path('photo_edit', {'id': photo.id}) }}">edit</a>
-		{{ include('photo/_delete_form.html.twig') }}
+			</div>
+		</div>
 	</div>
 
 {% endblock %}

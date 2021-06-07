@@ -10,20 +10,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("admin/user")
- */
+
 class UserController extends AbstractController
 {
-    // /**
-    //  * @Route("/", name="user_index", methods={"GET"})
-    //  */
-    // public function index(UserRepository $userRepository): Response
-    // {
-    //     return $this->render('admin/index.html.twig', [
-    //         'users' => $userRepository->findAll(),
-    //     ]);
-    // }
+    /**
+     * @Route("/", name="user_index", methods={"GET"})
+     */
+    public function index(UserRepository $userRepository): Response
+    {
+        return $this->render('navbar.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+
+
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})

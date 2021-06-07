@@ -4,42 +4,56 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Users List</h1>
-	<table>
-		<thead>
-			<th>ID</th>
-			<th>Login</th>
-			<th>Rôles</th>
-			<th>PicBook</th>
-			<th>Actions</th>
-		</thead>
-		<tbody>
-			{# On boucle sur les utilisateurs #}
-			{% for user in users %}
-				<tr>
-					<td>{{ user.id }}</td>
-					<td>{{ user.login }}</td>
-					<td>
-						{# On boucle sur les rôles #}
-						{% for role in user.roles %}
-							{% if role == "ROLE_USER" %}
-								Utilisateur
-							{% elseif role == "ROLE_CONSUMER" %}
-								Clients
-							{% elseif role == "ROLE_ADMIN" %}
-								Administrateur
-							{% endif %}
-						{% endfor %}
-					</td>
-					<td>{{ user.album|length }}</td>
-					<td>
-						<a href="{{ path('admin_user_edit', {'id': user.id}) }}">Modifier</a>
-					</td>
-				</tr>
 
-			{% else %}
-				<p>Aucun utilisateur inscrit</p>
-			{% endfor %}
-		</tbody>
-	</table>
+	<div class="container mt-5">
+		<div class="row flex-column">
+			<h1 class="text-center">Users List</h1>
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Login</th>
+					<th>Rôles</th>
+					<th>PicBook</th>
+					<th>Actions</th>
+				</thead>
+				<tbody>
+					{# On boucle sur les utilisateurs #}
+					{% for user in users %}
+						<tr>
+							<td>{{ user.id }}</td>
+							<td>{{ user.login }}</td>
+							<td>
+								{# On boucle sur les rôles #}
+								{% for role in user.roles %}
+									{% if role == "ROLE_USER" %}
+										Utilisateur
+									{% elseif role == "ROLE_CONSUMER" %}
+										Clients
+									{% elseif role == "ROLE_ADMIN" %}
+										Administrateur
+									{% endif %}
+								{% endfor %}
+							</td>
+
+							<td>
+								{% for album in user.album %}
+									{{ album.name}}
+									,
+								{% endfor %}
+							</td>
+
+							<td>
+								<a class="btn btn-dark" href="{{ path('admin_user_edit', {'id': user.id}) }}">Modifier</a>
+							</td>
+						</tr>
+
+					{% else %}
+						<p>Aucun utilisateur inscrit</p>
+					{% endfor %}
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+
 {% endblock %}

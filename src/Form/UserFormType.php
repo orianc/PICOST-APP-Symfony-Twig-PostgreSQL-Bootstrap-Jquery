@@ -34,10 +34,6 @@ class UserFormType extends AbstractType
                 'label' => 'Rôles'
             ])
 
-            ->add('album', EntityType::class, [
-                'class' => Album::class,
-                'choice_label' => 'name'
-            ])
 
             ->add('password', PasswordType::class, [
                 'attr' => ['class' => 'form-control']

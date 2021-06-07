@@ -13,16 +13,28 @@
 
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-link active" href=" {{ path ('album_index')}} ">Picbook</a>
+			<a class="nav-link active" aria-current="page" href=" {{ path ('album_index')}} ">Picbook</a>
 			<a class="nav-link" href=" {{ path ('photo_index')}} ">All Pic</a>
 			<a class="nav-link" href="{{ path ('about_picost')}}">About Picost</a>
-			{% if is_granted('ROLE_ADMIN') %}
-				<a class="nav-link" href="{{ path ('app_logout')}}">Logout</a>
 
+
+			{% if is_granted('ROLE_ADMIN') %}
+				<a class="nav-link" href="{{ path ('admin_users')}}">
+					<i class="fas fa-users-cog"></i>
+					Manage Users
+				</a>
+				<a class="nav-link" href="{{ path ('app_logout')}}">Logout</a>
+				<a class="nav-link disabled" href="{{ path ('app_logout')}}">Connected as Admin</a>
+
+			{% elseif is_granted('ROLE_CONSUMER') %}
+				<a class="nav-link" href="{{ path ('app_logout')}}">Logout</a>
+				<a class="nav-link disabled" href="{{ path ('app_logout')}}">Welcome
+					{{app.user.login}}
+					{# {{dump(app.user)}} #}
+				</a>
 			{% else %}
 				<a class="nav-link" href="{{ path ('app_login')}}">Login</a>
 			{% endif %}
-
 		</div>
 	</div>
 </nav>

@@ -17,6 +17,9 @@ h4,
 	opacity: 0;
 }
 
+.text-justify {
+	text-align: justify !important;
+}
 .input {
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
