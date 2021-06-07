@@ -71,7 +71,8 @@ a:hover {
 	background-color: #3d3d3d44;
 	transform: scale(1.2, 1.2);
 }
-
+.fa-folder-open:hover,
+.fa-folder:hover,
 .fa-edit:hover {
 	color: #ffde00;
 }

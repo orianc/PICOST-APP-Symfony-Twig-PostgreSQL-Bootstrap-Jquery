@@ -8,15 +8,27 @@
 		<h2 class="text-center">Picbook</h2>
 
 		{% block albums %}
-			<div class="row  justify-content-center align-items-center align-items-md-start flex-column flex-md-row">
-				{% include "album/_navalbums.html.twig" %}
+			<div
+				class="row  justify-content-center align-items-center">
+				{# {% include "album/_navalbums.html.twig" %} #}
+				{% for album in albums %}
+					<div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+						<a class="text-center" href="{{ path('album_show', {'id': album.id}) }}">
+							<i class="fas fa-folder fa-4x"></i>
+							<p>{{album.name}}</p>
+						</a>
+					</div>
 
-				<div class="col-9 rounded bg-dark row justify-content-center py-3 ">
-					{% for p in albums[0].photos %}
-						{% include "album/_gallerypattern.html.twig" %}
+					{# <p>{{dump(album.name)}}</p> #}
+				{% endfor %}
 
-					{% endfor %}
-				</div>
+
+				{# <div class="col-9 rounded bg-dark row justify-content-center py-3 ">
+																																																																{% for p in albums[0].photos %}
+																																																																{% include "album/_gallerypattern.html.twig" %}
+																																																																
+																																																																{% endfor %}
+																																																																</div> #}
 
 			</div>
 		{% endblock %}
