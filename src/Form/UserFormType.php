@@ -40,7 +40,7 @@ class UserFormType extends AbstractType
 
             ])
 
-            ->add('valider', SubmitType::class);
+            ->add('confirm', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

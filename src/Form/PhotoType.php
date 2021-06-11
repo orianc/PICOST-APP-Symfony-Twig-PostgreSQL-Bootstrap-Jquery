@@ -30,6 +30,7 @@ class PhotoType extends AbstractType
                 'allow_delete' => false,
                 'delete_label' => '...',
                 'download_label' => 'Download this Pic',
+                'empty_data' => ''
             ])
             ->add('name', TextType::class, [
                 'label' => 'Name',

@@ -9,7 +9,9 @@
 			<h1>Pic</h1>
 			<p>{{ photo.name }}</p>
 
-			<img class="rounded" style=" width: 300px;" src="{{ asset ('photos/pictures/' ~ photo.name ) }}">
+			<a href="{{ asset ('photos/pictures/' ~ photo.name ) }}">
+				<img class="rounded" style=" width: 300px;" src="{{ asset ('photos/pictures/' ~ photo.name ) }}">
+			</a>
 
 			<div class="row mt-2">
 				{% if is_granted('ROLE_CONSUMER') %}
