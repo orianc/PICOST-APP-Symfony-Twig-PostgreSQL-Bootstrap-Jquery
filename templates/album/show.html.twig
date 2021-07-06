@@ -7,7 +7,9 @@
 {% block body %}
 	<div class="container py-5">
 		{% block albums %}
-			<a class="btn btn-dark" href="{{ path('photo_new', {'id': album.id}) }}">Add Pic</a>
+			{% if is_granted('ROLE_ADMIN') %}
+				<a class="btn btn-dark" href="{{ path('photo_new', {'id': album.id}) }}">Add Pic</a>
+			{% endif %}
 
 			<h2 class="text-center">{{album.name}}</h2>
 			<div class="row justify-content-center align-items-center align-items-md-start flex-column flex-md-row">

@@ -87,7 +87,8 @@
 			"requirements-checker": "script"
 		},
 		"compile": [
-			"php bin/console doctrine:migration:migrate"
+			"php bin/console doctrine:migration:migrate",
+			"php bin/console doctrine:fixtures:load --no-interaction --env=PROD"
 		],
 		"post-install-cmd": [
 			"@auto-scripts"

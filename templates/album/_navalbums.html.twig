@@ -7,11 +7,6 @@
 
 	<div id="navbarAlbum" class="collapse navbar-collapse col-3 nav nav-albums flex-md-column">
 
-		{% if is_granted('ROLE_ADMIN') %}
-			<a class="badge rounded-pill mb-2" href="{{ path('album_new') }}">
-				<i class="fas fa-folder-plus fa-2x"></i>
-			</a>
-		{% endif %}
 		<div class="bg-light">
 			{% for album in albums %}
 				<div class="nav-item-link d-flex p-1">
