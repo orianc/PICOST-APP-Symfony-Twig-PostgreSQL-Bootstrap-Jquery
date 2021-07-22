@@ -86,4 +86,4 @@ Quels seront les utilisateurs de l'API ?
 
 ### 2.6.4. Déploiement
 
-    ## 2.7. Support de présentation client
+Deploy available on https://app-picost.herokuapp.com/
