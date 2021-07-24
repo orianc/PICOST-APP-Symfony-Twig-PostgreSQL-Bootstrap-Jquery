@@ -9,13 +9,81 @@
   - [2.4. Data base design - MySql workbench](#24-data-base-design---mysql-workbench)
   - [2.5. Visual identity](#25-visual-identity)
 
-### 0.1. Project requirements
+### 0.0.1. Project requirements
 
-<a href="./z.conception/referenciel-projet.pdf" download="project-requirement">pdf : Download project requirements</a>
+<a href="./z.conception/referenciel-projet.pdf" download="project-requirement">pdf : This is project requirements</a>
 
-### 0.2. Deployment
+### 0.0.2. Project stack
+
+- PostgreSql database
+- Symfony - Twig - Bootstrap - jQuery
+- Heroku deployment
+
+### 0.0.3. Project dependencies
+
+<details>
+<summary>open dropdown dependencies</summary>
+
+```json
+"require": {
+  "php": ">=7.2.5",
+		"ext-ctype": "*",
+		"ext-iconv": "*",
+		"composer/package-versions-deprecated": "1.11.99.1",
+		"doctrine/annotations": "^1.0",
+		"doctrine/doctrine-bundle": "^2.3",
+		"doctrine/doctrine-fixtures-bundle": "^3.4",
+		"doctrine/doctrine-migrations-bundle": "^3.1",
+		"doctrine/orm": "^2.8",
+		"phpdocumentor/reflection-docblock": "^5.2",
+		"sensio/framework-extra-bundle": "^5.1",
+		"symfony/apache-pack": "^1.0",
+		"symfony/asset": "5.2.*",
+		"symfony/console": "5.2.*",
+		"symfony/dotenv": "5.2.*",
+		"symfony/expression-language": "5.2.*",
+		"symfony/flex": "^1.3.1",
+		"symfony/form": "5.2.*",
+		"symfony/framework-bundle": "5.2.*",
+		"symfony/http-client": "5.2.*",
+		"symfony/intl": "5.2.*",
+		"symfony/mailer": "5.2.*",
+		"symfony/mime": "5.2.*",
+		"symfony/monolog-bundle": "^3.1",
+		"symfony/notifier": "5.2.*",
+		"symfony/process": "5.2.*",
+		"symfony/property-access": "5.2.*",
+		"symfony/property-info": "5.2.*",
+		"symfony/proxy-manager-bridge": "5.2.*",
+		"symfony/requirements-checker": "^2.0",
+		"symfony/security-bundle": "5.2.*",
+		"symfony/serializer": "5.2.*",
+		"symfony/string": "5.2.*",
+		"symfony/translation": "5.2.*",
+		"symfony/twig-bundle": "^5.2",
+		"symfony/validator": "5.2.*",
+		"symfony/web-link": "5.2.*",
+		"symfony/yaml": "5.2.*",
+		"twig/extra-bundle": "^2.12|^3.0",
+		"twig/twig": "^2.12|^3.0",
+		"vich/uploader-bundle": "^1.17"
+	},
+```
+
+  </details>
+
+#### 0.0.3.1. Deployment
 
 **Deploy available on** https://app-picost.herokuapp.com/
+
+#### 0.0.3.1. Installation
+
+in command line, at root path.
+
+```bash
+  composer install
+  symfony serve
+```
 
 # 1. Picost
 
@@ -23,11 +91,17 @@
 
 A web application about pictures management, for only one user, the application's owner.
 
-`FR`
+`FR dropdown version`
 
-```
+  <details>
+<summary>voir version française</summary>
+<br/>
 Une application web de gestion d'images, pour un seul utilisateur, le propriétaire de l'application.
-```
+<br/>
+<br/>
+
+</details>
+<br/>
 
 ## 1.2. Needs
 
@@ -41,9 +115,11 @@ He must be able to show and offer **his services** and **his work** to the gener
 
 To show his work he usually creates **albums** by **theme** in which he groups the **photos corresponding to this theme**. This allows him to show his skills according to such or such need's client _ (ex: portraits, landscapes, events etc ...) _.
 
-`FR`
+`FR dropdown version`
 
-```
+  <details>
+<summary>voir version française</summary>
+<br/>
 Un photographe professionnel demande à ce qu'on lui créé une application web pour stocker, organiser et montrer ses photos ainsi que proposer ses prestations au grand public.
 
 Il souhaite par le biais de cet outil, pouvoir démarcher, vendre, rendre la prestation demander au futur client.
@@ -53,7 +129,11 @@ Il souhaite utiliser cette application sur différent support _(ordinateur, tabl
 Il doit pouvoir montrer et proposer ses prestations et ses travaux au grand public lui permettant ainsi avec un outil flexible et dynamique mais aussi esthétique et pro, de démarcher ses clients avec une présentation de ses travaux et de ses tarifs qu'il pourra mettre à jour régulièrement et selon son besoin.
 
 Pour montrer ses travaux il a l'habitude de créer des albums par thème dans lesquel il regroupe les photos répondant à ce thème. Cela lui permet aurpès d'un client de montrer ses compétences selon tel ou tel besoin _(ex : des portraits, des paysages, des évènements etc...)_.
-```
+<br/>
+<br/>
+
+</details>
+<br/>
 
 ### 1.2.1. Supplement needs : client account
 
@@ -63,15 +143,21 @@ The application therefore allows him to have **a global vision on his public alb
 
 Finally, he would like **his clients after services to be able to consult and retrieve their album directly on the photographer's application in a secure and private way.**
 
-`FR`
+`FR dropdown version`
 
-```
+  <details>
+<summary>voir version française</summary>
+<br/>
 Pour rendre une prestation de photogrpahie à un client, il propose un album dédié qui regroupe les photos qui lui sont propres.
 
 L'application lui permet donc d'avoir une vision gobale sur ses albums publics dédiées à la prospection et sur ses albums privés dédiées à la livraison de client.
 
 Enfin il voudrait que ses clients après prestations puissent consulter et récupérer leur album directement sur l'pplication du photographe de manière sécurisée et privée.
-```
+<br/>
+<br/>
+
+</details>
+<br/>
 
 # 2. Analysis & design
 
